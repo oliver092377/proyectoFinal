@@ -6,13 +6,14 @@ use CGI;
 #
 my $q = CGI->new;
 print $q->header('text/xml;charset=UTF-8');
-my $titulo = $q->param("title");
+my @texto;
+my $texto[0] = $q->param("texto");
 
 print <<"HTML";
 <?xml version="1.0" encoding="utf-8"?>
     <article>
       <owner>oliver</owner>
       <title>miTitulo</title>
-      <text>#texto en h1</text>
+      <text>$texto[0]</text>
     </article>
 HTML

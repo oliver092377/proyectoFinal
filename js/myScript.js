@@ -217,6 +217,7 @@ function responseNew(response){
  * Esta función invoca al CGI view.pl, la respuesta del CGI debe ser
  * atendida por responseView
  */
+//soli:
 function doView(title){
   console.log("user: "+userKey);
   console.log("title: "+title);

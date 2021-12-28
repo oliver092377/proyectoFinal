@@ -4,7 +4,7 @@ use warnings;
 use CGI;
 use DBI;
 
-
+#creando el CGI
 my $q = CGI->new;
 print $q->header('text/xml;charset=UTF-8');
 

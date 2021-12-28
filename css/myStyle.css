@@ -1,7 +1,8 @@
 * {
   box-sizing: border-box;
-}
 
+}
+#body
 body {
   font-family: Arial;
   padding: 10px;

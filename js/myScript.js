@@ -226,6 +226,7 @@ function doView(title){
   var myHTML;
   promise.then(response => response.text())
     .then(data =>{
+      //myHTML = (new window.DOMParser()).parseFromString(data, "text/html");
       console.log(data);
       responseView(data);
     }).catch(error =>{

@@ -1,9 +1,11 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
+use CGI;
 
 my $q = CGI->new;
 print $q->header('text/xml;charset=UTF-8');
+my $titulo = $q->param("title");
 
 print <<"HTML";
 <?xml version="1.0" encoding="utf-8"?>

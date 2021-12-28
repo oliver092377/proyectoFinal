@@ -10,9 +10,10 @@ print $q->header('text/xml;charset=UTF-8');
 my $usuario = $q->param("owner");
 my $titulo = $q->param("title");
 my $texto = $q->param("text");
-if(substr($texto,0,1) eq "#"){
-  $texto="#".$texto;
-}
+#if(substr($texto,0,1) eq "#"){
+#  $texto=substr($texto,1,length($texto)-1);
+#}
+
 
 if(defined($usuario) and defined($titulo) and defined($texto)){
   if(checkLogin($usuario)){
@@ -45,7 +46,13 @@ sub registrar{
   my $password = 'pweb1';
   my $dsn = 'DBI:MariaDB:database=pweb1;host=localhost';
   my $dbh = DBI->connect($dsn, $user, $password) or die("No se pudo conectar!");
-  my $sql = "INSERT INTO Articles VALUES ('$titulo','$usuario','$texto')";
+  #if(substr($texto,0,1) eq "#"){
+    #$texto=substr($texto,1,length($texto)-1);
+    #my $sql = "INSERT INTO Articles VALUES ('$titulo','$usuario','\#$texto')";
+    #}
+  # else{
+     my $sql = "INSERT INTO Articles VALUES ('$titulo','$usuario','$texto')";
+     # }
   my $sth = $dbh->prepare($sql);
   $sth->execute();
   $sth->finish;

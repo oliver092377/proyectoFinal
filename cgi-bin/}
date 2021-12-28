@@ -5,7 +5,7 @@ use CGI;
 use DBI;
 
 my $q = CGI->new;
-print $q->header('text/xml;charset=UTF-8');
+print $q->header('text/xml');
 
 my $usuario = $q->param("owner");
 my $titulo = $q->param("title");
